@@ -38,7 +38,7 @@ class RecyclerViewActivity : AppCompatActivity() {
         }
         else -> {
           adapter = GridItemAdapter(this@RecyclerViewActivity, myDataset)
-          layoutManager = GridLayoutManager(this@RecyclerViewActivity, 3)
+          layoutManager = GridLayoutManager(this@RecyclerViewActivity, 2)
         }
       }
       setHasFixedSize(true)
