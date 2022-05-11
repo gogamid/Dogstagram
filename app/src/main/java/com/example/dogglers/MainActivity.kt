@@ -1,5 +1,6 @@
 package com.example.dogglers
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -14,11 +15,15 @@ class MainActivity : AppCompatActivity() {
     setContentView(binding.root)
 
     binding.apply {
-      verticalBtn.setOnClickListener { makeToast("Vertical button clicked") }
+      verticalBtn.setOnClickListener { launchRecyclerScreen() }
       horizontalBtn.setOnClickListener { makeToast("Horizontal button clicked") }
       gridBtn.setOnClickListener { makeToast("Grid button clicked") }
     }
 
+  }
+
+  private fun launchRecyclerScreen() {
+    startActivity(Intent(this, RecyclerViewActivity::class.java))
   }
 
   private fun makeToast(message: String) {
