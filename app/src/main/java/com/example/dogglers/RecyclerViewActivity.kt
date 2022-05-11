@@ -5,6 +5,10 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.dogglers.adapter.GridItemAdapter
+import com.example.dogglers.adapter.VerticalHorizontalItemAdapter
+import com.example.dogglers.data.Datasource
 import com.example.dogglers.databinding.ActivityRecyclerViewBinding
 
 class RecyclerViewActivity : AppCompatActivity() {
@@ -15,8 +19,29 @@ class RecyclerViewActivity : AppCompatActivity() {
     setContentView(binding.root)
 
 
-    val layoutManager: String? = intent.extras?.getString("layoutManager")
-    Toast.makeText(this, layoutManager ?: "null", Toast.LENGTH_SHORT).show()
+    val layoutType: String? = intent.extras?.getString("layoutManager")
+    val myDataset = Datasource().loadDogs()
 
+    binding.recyclerView.apply {
+      when (layoutType) {
+        "vertical" -> {
+          adapter = VerticalHorizontalItemAdapter(this@RecyclerViewActivity, myDataset)
+          layoutManager = LinearLayoutManager(this@RecyclerViewActivity).also {
+            it.orientation = RecyclerView.VERTICAL
+          }
+        }
+        "horizontal" -> {
+          adapter = VerticalHorizontalItemAdapter(this@RecyclerViewActivity, myDataset)
+          layoutManager = LinearLayoutManager(this@RecyclerViewActivity).also {
+            it.orientation = RecyclerView.HORIZONTAL
+          }
+        }
+        else -> {
+          adapter = GridItemAdapter(this@RecyclerViewActivity, myDataset)
+          layoutManager = GridLayoutManager(this@RecyclerViewActivity, 3)
+        }
+      }
+      setHasFixedSize(true)
+    }
   }
 }

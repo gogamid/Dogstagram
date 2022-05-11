@@ -12,7 +12,7 @@ class Datasource {
       Dog(R.drawable.frankie, "Frankie", 5, "Stealing sock"),
       Dog(R.drawable.leroy, "Leroy", 6, "Sleeping in dangerous places"),
       Dog(R.drawable.nox, "Nox", 7, "Meeting new animals"),
-      Dog(R.drawable.tzeitel, "Tzeitel", 8, "Sunbathing"),
+      Dog(R.drawable.tzeitel, "Tzeitel", 8, "Sunbathing")
     )
   }
 }
