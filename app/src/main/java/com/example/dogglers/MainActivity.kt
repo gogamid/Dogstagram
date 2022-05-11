@@ -15,18 +15,16 @@ class MainActivity : AppCompatActivity() {
     setContentView(binding.root)
 
     binding.apply {
-      verticalBtn.setOnClickListener { launchRecyclerScreen() }
-      horizontalBtn.setOnClickListener { makeToast("Horizontal button clicked") }
-      gridBtn.setOnClickListener { makeToast("Grid button clicked") }
+      verticalBtn.setOnClickListener { launchRecyclerScreen("vertical") }
+      horizontalBtn.setOnClickListener { launchRecyclerScreen("horizontal") }
+      gridBtn.setOnClickListener { launchRecyclerScreen("grid") }
     }
 
   }
 
-  private fun launchRecyclerScreen() {
-    startActivity(Intent(this, RecyclerViewActivity::class.java))
-  }
-
-  private fun makeToast(message: String) {
-    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+  private fun launchRecyclerScreen(layoutManager: String) {
+    val intent = Intent(this, RecyclerViewActivity::class.java)
+    intent.putExtra("layoutManager", layoutManager)
+    startActivity(intent)
   }
 }
