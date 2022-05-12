@@ -29,4 +29,9 @@ class ButtonTests {
   fun horizontal_list_button_is_displayed() {
     onView(ViewMatchers.withId(R.id.horizontal_btn)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
   }
+
+  @Test
+  fun grid_list_button_is_displayed() {
+    onView(ViewMatchers.withId(R.id.grid_btn)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+  }
 }
