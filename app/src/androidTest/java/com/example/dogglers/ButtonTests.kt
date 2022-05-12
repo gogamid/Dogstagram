@@ -42,4 +42,10 @@ class ButtonTests {
     onView(withId(R.id.vertical_btn)).perform(ViewActions.click())
     onView(withId(R.id.recycler_view)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
   }
+
+  @Test
+  fun clicking_horizontal_list_button_displays_horizontal_list() {
+    onView(withId(R.id.horizontal_btn)).perform(ViewActions.click())
+    onView(withId(R.id.recycler_view)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+  }
 }
