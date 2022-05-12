@@ -68,8 +68,8 @@ open class BaseTest {
    */
   fun checkFirstPosition() {
     hasListItemContent(
-      "Tzeitel", "Age: 7", "Hobbies: sunbathing",
-      R.drawable.tzeitel
+      "Bella", "Age: 3", "Hobbies: Chasing",
+      R.drawable.bella
     )
   }
 
