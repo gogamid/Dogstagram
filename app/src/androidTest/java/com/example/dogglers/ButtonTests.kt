@@ -48,4 +48,10 @@ class ButtonTests {
     onView(withId(R.id.horizontal_btn)).perform(ViewActions.click())
     onView(withId(R.id.recycler_view)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
   }
+
+  @Test
+  fun clicking_grid_list_button_displays_grid_list() {
+    onView(withId(R.id.grid_btn)).perform(ViewActions.click())
+    onView(withId(R.id.recycler_view)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+  }
 }
