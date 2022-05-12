@@ -16,10 +16,10 @@ class VerticalHorizontalItemAdapter(
 ) : RecyclerView.Adapter<VerticalHorizontalItemAdapter.ItemViewHolder>() {
 
   class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    val dog_image: ImageView = view.findViewById(R.id.dog_image)
-    val dog_name: TextView = view.findViewById(R.id.dog_name)
-    val dog_age: TextView = view.findViewById(R.id.dog_age)
-    val dog_hobbies: TextView = view.findViewById(R.id.dog_hobbies)
+    val dogImage: ImageView = view.findViewById(R.id.dog_image)
+    val dogName: TextView = view.findViewById(R.id.dog_name)
+    val dogAge: TextView = view.findViewById(R.id.dog_age)
+    val dogHobbies: TextView = view.findViewById(R.id.dog_hobbies)
   }
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -30,10 +30,10 @@ class VerticalHorizontalItemAdapter(
 
   override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
     val item = dataset[position]
-    holder.dog_image.setImageResource(item.imgId)
-    holder.dog_name.text = item.name
-    holder.dog_age.text = context.resources.getString(R.string.age_s, item.age.toString())
-    holder.dog_hobbies.text = context.resources.getString(R.string.hobbies_s, item.hobbies)
+    holder.dogImage.setImageResource(item.imgId)
+    holder.dogName.text = item.name
+    holder.dogAge.text = context.resources.getString(R.string.age_s, item.age.toString())
+    holder.dogHobbies.text = context.resources.getString(R.string.hobbies_s, item.hobbies)
   }
 
   override fun getItemCount(): Int = dataset.size
