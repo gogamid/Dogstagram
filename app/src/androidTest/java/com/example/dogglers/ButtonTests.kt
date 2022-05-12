@@ -24,4 +24,9 @@ class ButtonTests {
     onView(ViewMatchers.withId(R.id.vertical_btn))
       .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
   }
+
+  @Test
+  fun horizontal_list_button_is_displayed() {
+    onView(ViewMatchers.withId(R.id.horizontal_btn)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+  }
 }
